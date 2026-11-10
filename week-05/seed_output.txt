@@ -1,0 +1,25 @@
+TRUNCATE TABLE
+INSERT 0 6
+INSERT 0 6
+INSERT 0 8
+INSERT 0 14
+ setval 
+--------
+      6
+(1 row)
+
+ setval 
+--------
+      6
+(1 row)
+
+ setval 
+--------
+      8
+(1 row)
+
+ setval 
+--------
+     14
+(1 row)
+
