@@ -1,0 +1,235 @@
+TRUNCATE TABLE
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+ setval 
+--------
+      2
+(1 row)
+
+ setval 
+--------
+      2
+(1 row)
+
+ setval 
+--------
+      2
+(1 row)
+
+ setval 
+--------
+      2
+(1 row)
+
+T01 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:16: ERROR:  23502: null value in column "full_name" of relation "customer" violates not-null constraint
+DETAIL:  Failing row contains (1, null, a@example.test, Istanbul).
+SCHEMA NAME:  public
+TABLE NAME:  customer
+COLUMN NAME:  full_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T02 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:20: ERROR:  23502: null value in column "email" of relation "customer" violates not-null constraint
+DETAIL:  Failing row contains (1, Test Musteri, null, Istanbul).
+SCHEMA NAME:  public
+TABLE NAME:  customer
+COLUMN NAME:  email
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T03 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:24: ERROR:  23502: null value in column "product_name" of relation "product" violates not-null constraint
+DETAIL:  Failing row contains (1, null, T001, electronics, 100.00, 80.00, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+COLUMN NAME:  product_name
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T04 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:28: ERROR:  23502: null value in column "sku" of relation "product" violates not-null constraint
+DETAIL:  Failing row contains (1, Test Urun, null, electronics, 100.00, 80.00, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+COLUMN NAME:  sku
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T05 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:32: ERROR:  23502: null value in column "category" of relation "product" violates not-null constraint
+DETAIL:  Failing row contains (1, Test Urun, T001, null, 100.00, 80.00, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+COLUMN NAME:  category
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T06 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:36: ERROR:  23502: null value in column "list_price" of relation "product" violates not-null constraint
+DETAIL:  Failing row contains (1, Test Urun, T001, electronics, null, 80.00, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+COLUMN NAME:  list_price
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T07 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:40: ERROR:  23502: null value in column "stock_quantity" of relation "product" violates not-null constraint
+DETAIL:  Failing row contains (1, Test Urun, T001, electronics, 100.00, 80.00, null).
+SCHEMA NAME:  public
+TABLE NAME:  product
+COLUMN NAME:  stock_quantity
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T08 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:44: ERROR:  23502: null value in column "customer_id" of relation "customer_order" violates not-null constraint
+DETAIL:  Failing row contains (1, null, 2026-10-01, paid).
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+COLUMN NAME:  customer_id
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T09 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:48: ERROR:  23502: null value in column "order_date" of relation "customer_order" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, paid).
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+COLUMN NAME:  order_date
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T10 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:52: ERROR:  23502: null value in column "status" of relation "customer_order" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 2026-10-01, null).
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+COLUMN NAME:  status
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T11 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:56: ERROR:  23502: null value in column "order_id" of relation "order_item" violates not-null constraint
+DETAIL:  Failing row contains (1, null, 1, 1, 80.00).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+COLUMN NAME:  order_id
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T12 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:60: ERROR:  23502: null value in column "product_id" of relation "order_item" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, 1, 80.00).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+COLUMN NAME:  product_id
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T13 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:64: ERROR:  23502: null value in column "quantity" of relation "order_item" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, null, 80.00).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+COLUMN NAME:  quantity
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T14 Beklenen=23502
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:68: ERROR:  23502: null value in column "unit_price" of relation "order_item" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, 1, null).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+COLUMN NAME:  unit_price
+LOCATION:  ReportNotNullViolationError, execMain.c:2219
+T15 Beklenen=23505
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:72: ERROR:  23505: duplicate key value violates unique constraint "uq_customer_email"
+DETAIL:  Key (email)=(a@example.test) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  customer
+CONSTRAINT NAME:  uq_customer_email
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T16 Beklenen=23505
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:76: ERROR:  23505: duplicate key value violates unique constraint "uq_order_item_order_product"
+DETAIL:  Key (order_id, product_id)=(1, 1) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  uq_order_item_order_product
+LOCATION:  _bt_check_unique, nbtinsert.c:673
+T17 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:80: ERROR:  23514: new row for relation "product" violates check constraint "chk_product_list_price_positive"
+DETAIL:  Failing row contains (1, Test Urun, T001, electronics, 0.00, null, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+CONSTRAINT NAME:  chk_product_list_price_positive
+LOCATION:  ExecConstraints, execMain.c:2081
+T18 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:84: ERROR:  23514: new row for relation "product" violates check constraint "chk_product_stock_nonnegative"
+DETAIL:  Failing row contains (1, Test Urun, T001, electronics, 100.00, 80.00, -1).
+SCHEMA NAME:  public
+TABLE NAME:  product
+CONSTRAINT NAME:  chk_product_stock_nonnegative
+LOCATION:  ExecConstraints, execMain.c:2081
+T19 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:88: ERROR:  23514: new row for relation "customer_order" violates check constraint "chk_order_status"
+DETAIL:  Failing row contains (1, 1, 2026-10-01, unknown).
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+CONSTRAINT NAME:  chk_order_status
+LOCATION:  ExecConstraints, execMain.c:2081
+T20 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:92: ERROR:  23514: new row for relation "product" violates check constraint "chk_product_discount_range"
+DETAIL:  Failing row contains (1, Test Urun, T001, electronics, 100.00, 200.00, 10).
+SCHEMA NAME:  public
+TABLE NAME:  product
+CONSTRAINT NAME:  chk_product_discount_range
+LOCATION:  ExecConstraints, execMain.c:2081
+T21 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:96: ERROR:  23514: new row for relation "order_item" violates check constraint "chk_order_item_quantity"
+DETAIL:  Failing row contains (1, 1, 1, 0, 80.00).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  chk_order_item_quantity
+LOCATION:  ExecConstraints, execMain.c:2081
+T22 Beklenen=23514
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:100: ERROR:  23514: new row for relation "order_item" violates check constraint "chk_order_item_unit_price"
+DETAIL:  Failing row contains (1, 1, 1, 1, 0.00).
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  chk_order_item_unit_price
+LOCATION:  ExecConstraints, execMain.c:2081
+T23 Beklenen=23503
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:104: ERROR:  23503: insert or update on table "customer_order" violates foreign key constraint "fk_order_customer"
+DETAIL:  Key (customer_id)=(999) is not present in table "customer".
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+CONSTRAINT NAME:  fk_order_customer
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T24 Beklenen=23001
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:108: ERROR:  23001: update or delete on table "customer" violates RESTRICT setting of foreign key constraint "fk_order_customer" on table "customer_order"
+DETAIL:  Key (customer_id)=(1) is referenced from table "customer_order".
+SCHEMA NAME:  public
+TABLE NAME:  customer_order
+CONSTRAINT NAME:  fk_order_customer
+LOCATION:  ri_ReportViolation, ri_triggers.c:2797
+T25 Beklenen=23503
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:112: ERROR:  23503: insert or update on table "order_item" violates foreign key constraint "fk_item_order"
+DETAIL:  Key (order_id)=(999) is not present in table "customer_order".
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  fk_item_order
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T26 Beklenen=23503
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:116: ERROR:  23503: insert or update on table "order_item" violates foreign key constraint "fk_item_product"
+DETAIL:  Key (product_id)=(999) is not present in table "product".
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  fk_item_product
+LOCATION:  ri_ReportViolation, ri_triggers.c:2783
+T27 Beklenen=23001
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:120: ERROR:  23001: update or delete on table "product" violates RESTRICT setting of foreign key constraint "fk_item_product" on table "order_item"
+DETAIL:  Key (product_id)=(1) is referenced from table "order_item".
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  fk_item_product
+LOCATION:  ri_ReportViolation, ri_triggers.c:2797
+T28 Beklenen=OK
+UPDATE 1
+T29 Beklenen=OK
+UPDATE 1
+T30 Beklenen=OK
+UPDATE 1
+T31 Beklenen=OK
+UPDATE 1
+T32 Beklenen=OK
+DELETE 1
+T33 Beklenen=23503
+psql:C:/Users/alper/Documents/Codex/2026-11-10/referenced-chatgpt-conversation-this-is-an/outputs/come381-online-shopping/week-05/violations.sql:144: ERROR:  23503: update or delete on table "customer_order" violates foreign key constraint "fk_item_order" on table "order_item"
+DETAIL:  Key (order_id)=(1) is still referenced from table "order_item".
+SCHEMA NAME:  public
+TABLE NAME:  order_item
+CONSTRAINT NAME:  fk_item_order
+LOCATION:  ri_ReportViolation, ri_triggers.c:2811
+T34 Beklenen=OK
+INSERT 0 1
+T35 Beklenen=OK
+UPDATE 1

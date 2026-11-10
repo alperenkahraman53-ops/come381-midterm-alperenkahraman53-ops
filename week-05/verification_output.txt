@@ -1,0 +1,44 @@
+CASCADE_BEFORE
+BEGIN
+ orders_before 
+---------------
+             8
+(1 row)
+
+ items_before 
+--------------
+           14
+(1 row)
+
+DELETE 1
+ orders_after 
+--------------
+            7
+(1 row)
+
+ items_after 
+-------------
+          13
+(1 row)
+
+ROLLBACK
+D6_AI_CORRECT
+ customer_id |  full_name  
+-------------+-------------
+           1 | Ayse Yilmaz
+(1 row)
+
+D6_COUNT_COUNTEREXAMPLE
+ customer_id | full_name 
+-------------+-----------
+(0 rows)
+
+AUTOMATED_ASSERTIONS
+DO
+ASSERTIONS_PASS
+D6_EMPTY_TARGET_CHECK
+BEGIN
+UPDATE 3
+DO
+ROLLBACK
+EMPTY_TARGET_PASS

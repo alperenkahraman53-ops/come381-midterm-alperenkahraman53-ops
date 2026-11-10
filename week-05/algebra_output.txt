@@ -1,0 +1,51 @@
+ product_name 
+--------------
+ Kulaklik
+ Laptop
+(2 rows)
+
+  full_name   | product_name 
+--------------+--------------
+ Ayse Yilmaz  | Defter
+ Ayse Yilmaz  | Kulaklik
+ Ayse Yilmaz  | Laptop
+ Ayse Yilmaz  | Mouse
+ Ayse Yilmaz  | Roman
+ Can Arslan   | Defter
+ Elif Kaya    | Kulaklik
+ Elif Kaya    | Laptop
+ Elif Kaya    | Roman
+ Mehmet Demir | Laptop
+ Mehmet Demir | Mouse
+ Mehmet Demir | Roman
+ Zeynep Celik | Kalem
+(13 rows)
+
+ customer_id |  full_name   
+-------------+--------------
+           1 | Ayse Yilmaz
+           2 | Mehmet Demir
+           3 | Elif Kaya
+(3 rows)
+
+ customer_id | full_name  
+-------------+------------
+           6 | Deniz Acar
+(1 row)
+
+ customer_id | full_name  
+-------------+------------
+           6 | Deniz Acar
+(1 row)
+
+  customer_a  |  customer_b  |   city   
+--------------+--------------+----------
+ Ayse Yilmaz  | Elif Kaya    | Istanbul
+ Mehmet Demir | Zeynep Celik | Ankara
+(2 rows)
+
+ customer_id |  full_name  
+-------------+-------------
+           1 | Ayse Yilmaz
+(1 row)
+
