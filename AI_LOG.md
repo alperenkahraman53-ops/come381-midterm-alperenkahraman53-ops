@@ -34,3 +34,9 @@ SELECT c.customer_id,c.full_name FROM customer c WHERE NOT EXISTS (
 **Diğer kullanım:** Özgün ZIP'teki taslaklar ChatGPT yardımı içeriyordu. Bu devam oturumunda Codex yönergeleri okuyup eksik Ödev 1 foreign key'lerini ekledi, identity dizilerini düzeltti, D2 ve D5'te cebir/SQL küme eşdeğerliğini sağladı, D6 boş bölen farkını açıkladı ve 33 testi gerçek PostgreSQL üzerinde çalıştırdı. Gerçek RESTRICT kodunun 23001 olduğu görüldü. Test kanıtları otomatik kaydedildi. Kullanıcı bu açıklamaları ve önceki senaryo Issue'suna uyumu teslimden önce gözden geçirmelidir.
 
 **Bu oturumun kullanıcı talimatı:** “ödev son aşamaya gelene kadar yap ve bana özet geç”. Buna göre dosyalar tamamlandı ve yerel test yapıldı; GitHub'a gönderilmedi. Önceki taslaktaki D6 prompt kaydı korunmuştur; bu oturumda yeniden gönderilmiş bağımsız bir dış araç çağrısı gibi sunulmamaktadır.
+
+## Baştan kontrol — 10 Kasım 2026
+
+Kullanıcının aynen talebi: “peki baştan bi kontrol edermisin herhangi bir sıkıntı eksiklik birşey varmı? hocanın yazdığı şeylerde ödevin konusunda bi baştan kontrol edermisin”. Codex ders reposundaki güncel iki yönergeyi yeniden okuyup projeyle karşılaştırdı. NOT NULL kurallarını PostgreSQL 18 ADD CONSTRAINT sözdizimiyle adlandırdı ve her kurala yorum ekledi; NULL INSERT ve iki sütun eşitliği için T34/T35 ekledi. D2 soru başlığını DISTINCT sonucuyla uyumlu yaptı. Cebir sonuçları ve silme kanıtları testlerle doğrulanır. Bu istem, D6 için yeniden yapılmış bağımsız bir AI çağrısı değildir; yukarıdaki D6 kaydı özgün ZIP'ten gelir. Doğru sorguyu bozmuş gibi gösterilmedi; COUNT karşı örneği yalnız karşılaştırma içindir.
+
+Teslim durumu: Proje GitHub'a yüklendi ve PR #1 açıldı; önceki 'gönderilmedi' kaydı yerel hazırlık aşamasına aittir. Kullanıcı gizemturker davetini gönderdi; son kontrolde erişim henüz kabul edilmemişti. Senaryo Issue'sunun öğretmen onayı henüz kanıtlanamadı.

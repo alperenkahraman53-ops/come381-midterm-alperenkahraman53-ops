@@ -229,3 +229,7 @@ SCHEMA NAME:  public
 TABLE NAME:  order_item
 CONSTRAINT NAME:  fk_item_order
 LOCATION:  ri_ReportViolation, ri_triggers.c:2811
+T34 Beklenen=OK
+INSERT 0 1
+T35 Beklenen=OK
+UPDATE 1

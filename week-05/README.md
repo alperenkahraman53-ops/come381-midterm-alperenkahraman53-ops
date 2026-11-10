@@ -14,14 +14,18 @@ Windows'ta her komuta `-h 127.0.0.1 -U postgres` ekle; parola istenir. `schema.s
 
 ## NULL testi
 
-T31'de `discount_price` NULL olarak kabul edilir. PostgreSQL `CHECK` ifadesi `FALSE` olduğunda reddeder; `NULL` içeren karşılaştırma `UNKNOWN` üretebildiği için `NOT NULL` yoksa kabul edilebilir.
+T31 (UPDATE) ve T34 (INSERT) testlerinde `discount_price` NULL olarak kabul edilir. PostgreSQL `CHECK` ifadesi `FALSE` olduğunda reddeder; `NULL` içeren karşılaştırma `UNKNOWN` üretebildiği için `NOT NULL` yoksa kabul edilebilir.
 
 ## Gerçek çalıştırma gözlemleri
 
-PostgreSQL 18.6 üzerinde 33 testin tümü beklenen SQLSTATE veya OK sonucunu verdi. İki ardışık çalıştırmanın çıktıları birebir aynıydı. Yönergedeki genel 23503 beklentisinin aksine RESTRICT ile engellenen DELETE, T24 ve T27'de 23001 (restrict_violation) verdi; beklenen kodlar bu gerçek davranışa göre açıkça yazıldı. Kaynak: https://www.postgresql.org/docs/18/errcodes-appendix.html
+PostgreSQL 18.6 üzerinde 35 testin tümü beklenen SQLSTATE veya OK sonucunu verdi. İki ardışık çalıştırmanın çıktıları birebir aynıydı. Yönergedeki genel 23503 beklentisinin aksine RESTRICT ile engellenen DELETE, T24 ve T27'de 23001 (restrict_violation) verdi; beklenen kodlar bu gerçek davranışa göre açıkça yazıldı. Kaynak: https://www.postgresql.org/docs/18/errcodes-appendix.html
 
 Başlangıç taslağında açık ID ile INSERT, identity dizisini ilerletmediği için UNIQUE testleri yanlışlıkla primary key'e takılabiliyordu; hazırlık ve seed sonunda setval ile düzeltildi. T17'de fiyat düşürülürken indirimin de NULL yapılması, testin yanlış CHECK'e takılmasını önledi. Test çıktıları, cebir sonuçları ve otomatik doğrulama özeti bu klasördedir.
 
 Ek kontrol: `psql -h 127.0.0.1 -U postgres -d come381 -v ON_ERROR_STOP=1 -f week-05/verification.sql`. Yalnız bu projeye ait test veritabanında çalıştır: violations ve seed tabloları boşaltır.
 
 Not: `violations.sql` dosyasında T32 sipariş silme CASCADE testidir; ayrıca `on_delete.md` dosyasındaki sayım denemesini `seed.sql` sonrasında çalıştır.
+
+PostgreSQL 18 gereklidir: NOT NULL kurallari da ADD CONSTRAINT ile acik adlandirilmistir. Bu surume ait sozdizimi: https://www.postgresql.org/docs/18/sql-altertable.html
+
+`city` ve `discount_price` istege baglidir; diger is alanlari zorunludur. Cebir sorularinda satin alma, siparis kaleminde yer alma anlaminda kullanilir; odeme/teslim durumu filtrelenmez. Gercek bir satis raporunda pending/cancelled siparisler ayri ele alinmalidir. Stoktan toplam satis miktari dusme gibi tablolar arasi kurallar bu odeve CHECK ile eklenmedi; transaction/trigger gerektirir.

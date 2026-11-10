@@ -142,3 +142,12 @@ DELETE FROM customer_order WHERE order_id=2;
 -- T33 | fk_item_order UPDATE ebeveyn | Beklenen: 23503
 \echo T33 Beklenen=23503
 UPDATE customer_order SET order_id=999 WHERE order_id=1;
+
+-- T34 | chk_product_discount_range NULL INSERT | Beklenen: OK
+\echo T34 Beklenen=OK
+INSERT INTO product (product_name,sku,category,list_price,discount_price,stock_quantity)
+VALUES ('Indirimsiz urun','T003','books',10,NULL,1);
+
+-- T35 | chk_product_discount_range iki sutun esitlik siniri | Beklenen: OK
+\echo T35 Beklenen=OK
+UPDATE product SET discount_price=list_price WHERE product_id=1;

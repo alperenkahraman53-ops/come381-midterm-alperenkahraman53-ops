@@ -1,22 +1,32 @@
 -- Odev 2 Bolum A: sql/schema.sql dosyasindan SONRA calistirilir.
 -- Musterinin adi ve e-postasi bos olamaz.
-ALTER TABLE customer ALTER COLUMN full_name SET NOT NULL;
-ALTER TABLE customer ALTER COLUMN email SET NOT NULL;
+ALTER TABLE customer ADD CONSTRAINT nn_customer_full_name NOT NULL full_name;
+-- Musterinin e-postasi bos olamaz.
+ALTER TABLE customer ADD CONSTRAINT nn_customer_email NOT NULL email;
 -- Urun adi, kodu, kategorisi, fiyati ve stogu bos olamaz.
-ALTER TABLE product ALTER COLUMN product_name SET NOT NULL;
-ALTER TABLE product ALTER COLUMN sku SET NOT NULL;
-ALTER TABLE product ALTER COLUMN category SET NOT NULL;
-ALTER TABLE product ALTER COLUMN list_price SET NOT NULL;
-ALTER TABLE product ALTER COLUMN stock_quantity SET NOT NULL;
+ALTER TABLE product ADD CONSTRAINT nn_product_product_name NOT NULL product_name;
+-- Urunun kodu bos olamaz.
+ALTER TABLE product ADD CONSTRAINT nn_product_sku NOT NULL sku;
+-- Urunun kategorisi bos olamaz.
+ALTER TABLE product ADD CONSTRAINT nn_product_category NOT NULL category;
+-- Urunun liste fiyati bos olamaz.
+ALTER TABLE product ADD CONSTRAINT nn_product_list_price NOT NULL list_price;
+-- Urunun stok miktari bos olamaz.
+ALTER TABLE product ADD CONSTRAINT nn_product_stock_quantity NOT NULL stock_quantity;
 -- Her siparisin musteri, tarih ve durum bilgisi bulunmalidir.
-ALTER TABLE customer_order ALTER COLUMN customer_id SET NOT NULL;
-ALTER TABLE customer_order ALTER COLUMN order_date SET NOT NULL;
-ALTER TABLE customer_order ALTER COLUMN status SET NOT NULL;
+ALTER TABLE customer_order ADD CONSTRAINT nn_customer_order_customer_id NOT NULL customer_id;
+-- Siparis tarihi bos olamaz.
+ALTER TABLE customer_order ADD CONSTRAINT nn_customer_order_order_date NOT NULL order_date;
+-- Siparis durumu bos olamaz.
+ALTER TABLE customer_order ADD CONSTRAINT nn_customer_order_status NOT NULL status;
 -- Her siparis kaleminin siparis, urun, miktar ve satis fiyati bulunmalidir.
-ALTER TABLE order_item ALTER COLUMN order_id SET NOT NULL;
-ALTER TABLE order_item ALTER COLUMN product_id SET NOT NULL;
-ALTER TABLE order_item ALTER COLUMN quantity SET NOT NULL;
-ALTER TABLE order_item ALTER COLUMN unit_price SET NOT NULL;
+ALTER TABLE order_item ADD CONSTRAINT nn_order_item_order_id NOT NULL order_id;
+-- Kalemin urunu bos olamaz.
+ALTER TABLE order_item ADD CONSTRAINT nn_order_item_product_id NOT NULL product_id;
+-- Kalemin miktari bos olamaz.
+ALTER TABLE order_item ADD CONSTRAINT nn_order_item_quantity NOT NULL quantity;
+-- Kalemin satis fiyati bos olamaz.
+ALTER TABLE order_item ADD CONSTRAINT nn_order_item_unit_price NOT NULL unit_price;
 
 -- Ayni e-posta iki musteriye ait olamaz.
 ALTER TABLE customer ADD CONSTRAINT uq_customer_email UNIQUE (email);
